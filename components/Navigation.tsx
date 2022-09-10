@@ -2,70 +2,65 @@
 import { h } from "preact";
 import { tw } from "@twind";
 
-const anchorStyling = "p-1 hover:bg-banner rounded-lg transition-all ease-in-out";
+import CollapseButton from "../islands/CollapseButton.tsx";
 
-export default function Navigation() {
+interface Route {
+  path: string;
+  value: string;
+}
+
+function formatRoute(route: string): string {
+  if (route === "/") {
+    return "Home";
+  } else {
+    route = route.replace("-", " ")
+      .replace("/", "")
+      .toLowerCase();
+
+    return route.charAt(0).toUpperCase() + route.slice(1);
+  }
+}
+
+function initiateRoutes(routes: string[]): Route[] {
+  return routes.map((route) => ({
+    path: route,
+    value: formatRoute(route),
+  }));
+}
+
+const anchorStyling =
+  "p-1 hover:bg-banner rounded-lg transition-all ease-in-out";
+const routes = [
+  "/",
+  "/about",
+  "/tech-used",
+  "/cv",
+  "/my-projects",
+  "/open-source",
+  "conferences",
+];
+
+function createLinks(): h.JSX.Element[] {
+  return initiateRoutes(routes).map((route) => (
+    <li>
+      <a
+        class={tw`${anchorStyling}`}
+        href={route.path}
+      >
+        {route.value}
+      </a>
+    </li>
+  ));
+}
+
+export default function Navigation(): h.JSX.Element {
   return (
     <div class={tw`text-center text-2xl content-center `}>
-      <nav>
+      <CollapseButton target="navCollapse" />
+
+      <nav class={tw`hidden sm:block`} id="navCollapse">
         <ul>
-          <li>
-            <a
-              href="/"
-              class={tw`${anchorStyling}`}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-              class={tw`${anchorStyling}`}
-            >
-              About
-            </a>
-          </li>
-          <li>
-            <a
-              href="/tech-used"
-              class={tw`${anchorStyling}`}
-            >
-              Tech used
-            </a>
-          </li>
-          <li>
-            <a
-              href="/cv"
-              class={tw`${anchorStyling}`}
-            >
-              CV
-            </a>
-          </li>
-          <li>---</li>
-          <li>
-            <a
-              href="/my-projects"
-              class={tw`${anchorStyling}`}
-            >
-              My projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="/open-source"
-              class={tw`${anchorStyling}`}
-            >
-              Open-source contributions
-            </a>
-          </li>
-          <li>
-            <a
-              href="/conferences"
-              class={tw`${anchorStyling}`}
-            >
-              Conferences I have attended
-            </a>
-          </li>
+          {createLinks()}
         </ul>
       </nav>
     </div>

@@ -9,6 +9,7 @@ import * as $3 from "./routes/index.tsx";
 import * as $4 from "./routes/my-projects.tsx";
 import * as $5 from "./routes/open-source.tsx";
 import * as $6 from "./routes/tech-used.tsx";
+import * as $$0 from "./islands/CollapseButton.tsx";
 
 const manifest = {
   routes: {
@@ -20,7 +21,9 @@ const manifest = {
     "./routes/open-source.tsx": $5,
     "./routes/tech-used.tsx": $6,
   },
-  islands: {},
+  islands: {
+    "./islands/CollapseButton.tsx": $$0,
+  },
   baseUrl: import.meta.url,
 };
 
