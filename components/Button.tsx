@@ -3,7 +3,7 @@ import { h } from "preact";
 import { tw } from "@twind";
 
 interface ButtonProps {
-  class: string;
+  onClick: h.JSX.MouseEventHandler<HTMLButtonElement>;
   children: string;
 }
 
