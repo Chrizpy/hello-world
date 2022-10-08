@@ -1,16 +1,15 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
+import { HtmlAttributes } from "https://esm.sh/v92/csstype@3.1.0/index.d.ts";
+import { tw } from "twind";
 
 interface ButtonProps {
-  onClick: h.JSX.MouseEventHandler<HTMLButtonElement>;
+  onClick: any;
   children: string;
 }
 
 const buttonStyling =
   "block sm:hidden bg-banner rounded px-2 border border-black";
 
-export default function Button(props: ButtonProps): h.JSX.Element {
+export default function Button(props: ButtonProps) {
   return (
     <button
       {...props}
