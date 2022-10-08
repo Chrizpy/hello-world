@@ -8,7 +8,7 @@ import Navigation from "../components/Navigation.tsx";
 
 export default function Cv() {
   return (
-    <div class={tw`min-h-screen bg-dotted-background bg-repeat`}>
+    <div>
       <Head />
       <div id="content" class={tw`max-w-6xl mx-auto font-nanum`}>
         <SocialNav />
