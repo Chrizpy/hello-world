@@ -5,6 +5,11 @@ import { tw } from "@twind";
 export default function Head() {
   return (
     <div>
+      <link
+        href="/css/index.css"
+        rel="stylesheet"
+      >
+      </link>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" />
       <link

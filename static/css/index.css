@@ -1,0 +1,4 @@
+html, body {
+    background-image: url("../svg/small_dot.svg");
+    height: 100vh;
+}
