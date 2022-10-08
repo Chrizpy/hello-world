@@ -18,7 +18,7 @@ export default function Head() {
       >
       </link>
 
-      <div id="banner">
+      <div id="banner" class={tw`block h-36 md:h-64 lg:h-96`}>
         <img src="./svg/drawing.svg" class={tw`block mx-auto`}></img>
       </div>
     </div>
