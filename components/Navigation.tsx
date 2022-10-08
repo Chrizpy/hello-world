@@ -1,6 +1,4 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
+import { tw } from "twind";
 
 import CollapseButton from "../islands/CollapseButton.tsx";
 
@@ -40,7 +38,7 @@ const routes = [
   "conferences",
 ];
 
-function createLinks(): h.JSX.Element[] {
+function createLinks() {
   return initiateRoutes(routes).map((route) => (
     <li>
       <a
@@ -53,12 +51,12 @@ function createLinks(): h.JSX.Element[] {
   ));
 }
 
-export default function Navigation(): h.JSX.Element {
+export default function Navigation() {
   return (
-    <div class={tw`text-center text-2xl content-center `}>
+    <div class="text-center text-2xl content-center ">
       <CollapseButton target="navCollapse" />
 
-      <nav class={tw`hidden sm:block`} id="navCollapse">
+      <nav class="hidden sm:block" id="navCollapse">
         <ul>
           {createLinks()}
         </ul>

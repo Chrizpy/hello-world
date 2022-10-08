@@ -1,5 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
 import { useState } from "preact/hooks";
 
 import Button from "../components/Button.tsx";
@@ -23,7 +21,7 @@ function manipulateTarget(target: string, state: boolean) {
 
 export default function CollapseButton(
   props: CollapseButtonProps,
-): h.JSX.Element {
+) {
   const [state, setState] = useState(true);
   const switchCollapseState = () => {
     setState(!state);
