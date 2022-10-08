@@ -13,7 +13,7 @@ export default function Home() {
       <div id="content" class={tw`max-w-6xl mx-auto font-nanum`}>
         <SocialNav />
         <div class={tw`grid grid-cols-3 m-5`}>
-          <div class={tw`col-span-3 sm:col-span-1 `}>
+          <div class={tw`col-span-3 sm:col-span-1`}>
             <Navigation />
           </div>
           <div class={tw`col-span-3 sm:col-span-2`}>
