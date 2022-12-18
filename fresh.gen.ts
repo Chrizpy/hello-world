@@ -4,23 +4,27 @@
 
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/about.tsx";
-import * as $1 from "./routes/conferences.tsx";
-import * as $2 from "./routes/cv.tsx";
-import * as $3 from "./routes/index.tsx";
-import * as $4 from "./routes/my-projects.tsx";
-import * as $5 from "./routes/open-source.tsx";
-import * as $6 from "./routes/tech-used.tsx";
+import * as $1 from "./routes/blog.tsx";
+import * as $2 from "./routes/blog/[route].tsx";
+import * as $3 from "./routes/conferences.tsx";
+import * as $4 from "./routes/cv.tsx";
+import * as $5 from "./routes/index.tsx";
+import * as $6 from "./routes/my-projects.tsx";
+import * as $7 from "./routes/open-source.tsx";
+import * as $8 from "./routes/tech-used.tsx";
 import * as $$0 from "./islands/CollapseButton.tsx";
 
 const manifest = {
   routes: {
     "./routes/about.tsx": $0,
-    "./routes/conferences.tsx": $1,
-    "./routes/cv.tsx": $2,
-    "./routes/index.tsx": $3,
-    "./routes/my-projects.tsx": $4,
-    "./routes/open-source.tsx": $5,
-    "./routes/tech-used.tsx": $6,
+    "./routes/blog.tsx": $1,
+    "./routes/blog/[route].tsx": $2,
+    "./routes/conferences.tsx": $3,
+    "./routes/cv.tsx": $4,
+    "./routes/index.tsx": $5,
+    "./routes/my-projects.tsx": $6,
+    "./routes/open-source.tsx": $7,
+    "./routes/tech-used.tsx": $8,
   },
   islands: {
     "./islands/CollapseButton.tsx": $$0,

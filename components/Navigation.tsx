@@ -31,6 +31,7 @@ const anchorStyling =
 const routes = [
   "/",
   "/about",
+  "/blog",
   "/tech-used",
   "/cv",
   "/my-projects",

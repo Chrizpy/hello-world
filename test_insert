@@ -1,0 +1,12 @@
+#!/bin/sh
+
+curl -k -v http://localhost:27017 \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+      "dataSource": "Cluster0",
+      "database": "learn-data-api",
+      "collection": "hello",
+      "document": {
+        "text": "Hello from the Data API!",
+      }
+  }'
