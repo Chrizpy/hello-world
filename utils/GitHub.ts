@@ -12,6 +12,7 @@ export interface GitHubData {
   pull_request: PullRequest;
 }
 
-const user = Deno.env.get("USER")
+const user = Deno.env.get("USER");
 
-export const GitHubAPIQuery = `%20is:pull-request%20author:${user}%20archived:false%20is:public%20-user:${user}&per_page=100&page=1`
+export const GitHubAPIQuery =
+  `%20is:pull-request%20author:${user}%20archived:false%20is:public%20-user:${user}&per_page=100&page=1`;

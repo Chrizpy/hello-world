@@ -1,4 +1,4 @@
-import IconInfoSquare from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/info-square.tsx"
+import IconInfoSquare from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/info-square.tsx";
 
 import { PageProps } from "$fresh/server.ts";
 
@@ -9,7 +9,7 @@ import PullRequestItem from "../components/PullRequestItem.tsx";
 
 import { Handlers } from "$fresh/server.ts";
 
-import { GitHubData, PullRequest, GitHubAPIQuery } from "../utils/GitHub.ts"
+import { GitHubAPIQuery, GitHubData, PullRequest } from "../utils/GitHub.ts";
 
 export const handler: Handlers<GitHubData[]> = {
   async GET(_req, ctx) {
@@ -22,7 +22,7 @@ async function getPullrequsts(): Promise<GitHubData[]> {
   const resp: Response = await fetch(
     `https://api.github.com/search/issues?q=${GitHubAPIQuery}`,
   );
-  const pull_request_items: { items: GitHubData[]} = await resp.json();
+  const pull_request_items: { items: GitHubData[] } = await resp.json();
 
   return pull_request_items.items.map((item: GitHubData): GitHubData => {
     const pr_data: PullRequest = {
@@ -60,11 +60,18 @@ export default function OpenSource(props: PageProps<GitHubData[]>) {
             </div>
             <div class="mb-3 mt-3 pt-3 pb-3 rounded bg-banner">
               <p class="mx-3">
-                <span> <IconInfoSquare class="inline"/> </span>
-                <span> This page queries GitHub's API and serves all pull requests I have created that are in public repositories. </span>
+                <span>
+                  <IconInfoSquare class="inline" />
+                </span>
+                <span>
+                  This page queries GitHub's API and serves all pull requests I
+                  have created that are in public repositories.
+                </span>
               </p>
             </div>
-            {pullRequests.map((githubData : GitHubData) => <PullRequestItem GitHubData={githubData} />)}
+            {pullRequests.map((githubData: GitHubData) => (
+              <PullRequestItem GitHubData={githubData} />
+            ))}
           </div>
         </div>
       </div>

@@ -14,9 +14,7 @@ export default function TechUsed() {
           </div>
 
           <div class="col-span-3 sm:col-span-2">
-            <div
-              class="mt-5 text-5xl lg:text-6xl sm:text-left sm:mt-0"
-            >
+            <div class="mt-5 text-5xl lg:text-6xl sm:text-left sm:mt-0">
               <p>Coming soon!</p>
             </div>
           </div>

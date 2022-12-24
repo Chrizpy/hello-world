@@ -1,7 +1,7 @@
 import IconGitPullRequest from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-pull-request.tsx";
 import IconGitMerge from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-merge.tsx";
 
-import { GitHubData } from "../utils/GitHub.ts"
+import { GitHubData } from "../utils/GitHub.ts";
 
 function pullRequestIcon(state: string) {
   if (state === "open") return <IconGitPullRequest />;
@@ -11,7 +11,7 @@ function pullRequestIcon(state: string) {
 }
 
 export default function PullRequestItem(props: { GitHubData: GitHubData }) {
-  const pr : GitHubData = props.GitHubData;
+  const pr: GitHubData = props.GitHubData;
 
   return (
     <div class="bg-white border border-black rounded mb-5 p-3 transition ease-in-out hover:scale-105 font-sans">
