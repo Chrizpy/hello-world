@@ -27,7 +27,7 @@ function initiateRoutes(routes: string[]): Route[] {
 }
 
 const anchorStyling =
-  "p-1 hover:bg-banner rounded-lg transition-all ease-in-out";
+  "block md:w-28 p-1 m-1 rounded-lg hover:bg-banner bg-white transition-all ease-in-out";
 const routes = [
   "/",
   "/about",

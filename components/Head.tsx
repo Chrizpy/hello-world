@@ -13,12 +13,6 @@ export default function Head() {
         rel="stylesheet"
       >
       </link>
-      <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
-        rel="stylesheet"
-      >
-      </link>
-
       <div id="banner" class="block h-36 md:h-64 lg:h-96">
         <img src="/svg/drawing.svg" class="block mx-auto"></img>
       </div>

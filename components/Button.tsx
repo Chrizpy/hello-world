@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 const buttonStyling =
-  "block sm:hidden bg-banner rounded px-2 border border-black";
+  "block sm:hidden bg-banner rounded px-2 border border-black border-2";
 
 export default function Button(props: ButtonProps) {
   return (
