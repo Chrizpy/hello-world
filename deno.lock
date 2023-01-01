@@ -92,6 +92,8 @@
     "https://deno.land/x/importmap@0.2.1/_util.ts": "ada9a9618b537e6c0316c048a898352396c882b9f2de38aba18fd3f2950ede89",
     "https://deno.land/x/importmap@0.2.1/mod.ts": "ae3d1cd7eabd18c01a4960d57db471126b020f23b37ef14e1359bbb949227ade",
     "https://deno.land/x/rutt@0.0.13/mod.ts": "af981cfb95131152bf50fc9140fc00cb3efb6563df2eded1d408361d8577df20",
+    "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-github.tsx": "583c14b1fcea8a5fb3caf390516d252f8093a97d2bf2554a121f2dcbd648b401",
+    "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-linkedin.tsx": "fdb147c60a26c21ea85a923224c0c407a40b3ca632e2f0b18a1614bec9c84853",
     "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-merge.tsx": "48d6978701d437be7478353ed1eb0fc21b86622ae45a3c0ad0210d814fcc8276",
     "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-pull-request.tsx": "004b6401a4ed720bd3e6705c8faa1d43ddb6ef0107ce66ce5dbfdbe0857250e5",
     "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/info-square.tsx": "56850145d0b1bc5556c3a915d8666624d020b9a7bdee4a34405ed400acb209ca",

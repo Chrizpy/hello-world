@@ -1,7 +1,9 @@
 import { tw } from "twind";
 
-const iconStyling =
-  "hover:bg-banner rounded-lg p-1.5 transition-all ease-in-out";
+import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-github.tsx";
+import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-linkedin.tsx";
+
+const iconStyling = "hover:bg-banner rounded-lg p-2 transition-all ease-in-out";
 
 export default function SocialNav() {
   return (
@@ -11,14 +13,14 @@ export default function SocialNav() {
         target="_blank"
         class={tw`${iconStyling}`}
       >
-        <i class="align-middle ri-github-line"></i>
+        <IconBrandGithub class="inline w-8 h-8" />
       </a>
       <a
         href="https://www.linkedin.com/in/christoffer-akouri/"
         target="_blank"
         class={tw`${iconStyling}`}
       >
-        <i class="align-middle ri-linkedin-fill"></i>
+        <IconBrandLinkedin class="inline w-8 h-8" />
       </a>
     </div>
   );
