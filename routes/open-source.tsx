@@ -1,12 +1,6 @@
 import IconInfoSquare from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/info-square.tsx";
 
 import { PageProps } from "$fresh/server.ts";
-
-import Head from "../components/Head.tsx";
-import SocialNav from "../components/SocialNav.tsx";
-import Navigation from "../components/Navigation.tsx";
-import PullRequestItem from "../components/PullRequestItem.tsx";
-
 import { Handlers } from "$fresh/server.ts";
 
 import { GitHubAPIQuery, GitHubData, PullRequest } from "../utils/GitHub.ts";
@@ -41,40 +35,33 @@ async function getPullrequsts(): Promise<GitHubData[]> {
   });
 }
 
+import Page from "../components/Page.tsx";
+import PullRequestItem from "../components/PullRequestItem.tsx";
+
 export default function OpenSource(props: PageProps<GitHubData[]>) {
   const pullRequests = props.data;
 
   return (
     <div>
-      <Head />
-      <div id="content" class="max-w-6xl mx-auto font-nanum">
-        <SocialNav />
-        <div class="grid grid-cols-3 m-5">
-          <div class="col-span-3 sm:col-span-1 ">
-            <Navigation />
-          </div>
-
-          <div class="col-span-3 sm:col-span-2">
-            <div class="mt-5 text-5xl lg:text-4xl sm:text-left sm:mt-0">
-              <p>Open source!</p>
-            </div>
-            <div class="mb-3 mt-3 pt-3 pb-3 rounded bg-banner">
-              <p class="mx-3">
-                <span>
-                  <IconInfoSquare class="inline" />
-                </span>
-                <span>
-                  This page queries GitHub's API and serves all pull requests I
-                  have created that are in public repositories.
-                </span>
-              </p>
-            </div>
-            {pullRequests.map((githubData: GitHubData) => (
-              <PullRequestItem GitHubData={githubData} />
-            ))}
-          </div>
+      <Page>
+        <div class="mt-5 text-5xl lg:text-4xl sm:text-left sm:mt-0">
+          <p>Open source!</p>
         </div>
-      </div>
+        <div class="mb-3 mt-3 pt-3 pb-3 rounded bg-banner">
+          <p class="mx-3">
+            <span>
+              <IconInfoSquare class="inline" />
+            </span>
+            <span>
+              This page queries GitHub's API and serves all pull requests I have
+              created that are in public repositories.
+            </span>
+          </p>
+        </div>
+        {pullRequests.map((githubData: GitHubData) => (
+          <PullRequestItem GitHubData={githubData} />
+        ))}
+      </Page>
     </div>
   );
 }
