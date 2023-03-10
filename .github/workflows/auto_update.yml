@@ -18,6 +18,9 @@ jobs:
         run: |
           deno run -A -r https://fresh.deno.dev/update .
 
+      - name: Run formatting
+        run: deno fmt
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         id: pr
