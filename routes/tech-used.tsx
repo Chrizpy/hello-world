@@ -4,7 +4,7 @@ export default function TechUsed() {
   return (
     <div>
       <Page>
-        <div class="mt-5 text-5xl lg:text-4xl sm:text-left sm:mt-0">
+        <div class="text-5xl lg:text-4xl sm:text-left sm:mt-0">
           <p>Tech used!</p>
         </div>
 

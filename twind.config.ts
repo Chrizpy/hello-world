@@ -6,6 +6,12 @@ const nanumPenScriptImport =
 export default {
   selfURL: import.meta.url,
   theme: {
+    screens: {
+      "phone": "414px",
+      "tablet": "900px",
+      "laptop": "1279px",
+      "desktop": "1441px",
+    },
     extend: {
       colors: {
         "banner": "#B5F9F1",
