@@ -35,7 +35,7 @@ export default function Home() {
 
         <div id="title" class="text-2xl">
           <p>
-            I'm a {calculateAge(new Date("1998-05-21"))}
+            I'm a {calculateAge(new Date("1998-05-21"))}{" "}
             year old Software Engineer from &#127480;&#127466;. I currently work
             as a System Developer at Twingly.
             <a href="https://twingly.com" target="_blank">
