@@ -44,7 +44,7 @@ export default function OpenSource(props: PageProps<GitHubData[]>) {
   return (
     <div>
       <Page>
-        <div class="mt-5 text-5xl lg:text-4xl sm:text-left sm:mt-0">
+        <div class="text-5xl lg:text-4xl sm:text-left sm:mt-5">
           <p>Open source!</p>
         </div>
         <div class="mb-3 mt-3 pt-3 pb-3 rounded bg-banner">

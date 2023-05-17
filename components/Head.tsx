@@ -13,8 +13,12 @@ export default function Head() {
         rel="stylesheet"
       >
       </link>
-      <div id="banner" class="block h-36 md:h-64 lg:h-96">
-        <img src="/svg/drawing.svg" class="block mx-auto"></img>
+      <div id="banner" class="w-max-width">
+        <img
+          src="/svg/drawing.svg"
+          class="block mx-auto w-auto tablet:w-1/2 laptop:w-8/12 desktop:w-auto"
+        >
+        </img>
       </div>
     </div>
   );

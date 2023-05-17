@@ -9,11 +9,11 @@ export default function Page(props: any) {
       <div id="content" class="max-w-6xl mx-auto font-nanum">
         <SocialNav />
         <div class="grid grid-cols-4 m-5">
-          <div class="sm:col-span-1 col-span-4">
+          <div class="col-span-4 tablet:col-span-1">
             <Navigation />
           </div>
 
-          <div class="col-span-4 lg:col-span-2 md:col-span-3 sm:col-span-3">
+          <div class="mt-5 tablet:mt-0 col-span-4 tablet:col-span-2">
             {props.children}
           </div>
         </div>

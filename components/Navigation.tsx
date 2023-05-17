@@ -27,7 +27,7 @@ function initiateRoutes(routes: string[]): Route[] {
 }
 
 const anchorStyling =
-  "block md:w-28 p-1 m-1 rounded-lg hover:bg-banner bg-white transition-all ease-in-out";
+  "block p-1 m-1 rounded-lg hover:bg-banner transition-all ease-in-out";
 const routes = [
   "/",
   "/about",
@@ -53,10 +53,10 @@ function createLinks() {
 
 export default function Navigation() {
   return (
-    <div class="text-center text-2xl content-center ">
+    <div class="text-center text-2xl content-center">
       <CollapseButton target="navCollapse" />
 
-      <nav class="hidden sm:block" id="navCollapse">
+      <nav class="hidden tablet:block w-1/2 mx-auto" id="navCollapse">
         <ul>
           {createLinks()}
         </ul>

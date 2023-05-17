@@ -4,7 +4,7 @@ export default function Conferences() {
   return (
     <div>
       <Page>
-        <div class="mt-5 text-5xl lg:text-6xl sm:text-left sm:mt-0">
+        <div class="text-5xl lg:text-6xl sm:text-left sm:mt-0">
           <p>Coming soon!</p>
         </div>
       </Page>
