@@ -10,17 +10,17 @@ export default function TechUsed() {
 
         <div class="text-2xl">
           <p>
-            To create this website I used{" "}
+            To create this website, I used{"  "}
             <a
               href="https://fresh.deno.dev/"
               target="_blank"
               class="text-green-400"
             >
               Deno Fresh
-            </a>. As a non-frontend developer, I wanted to try something else
+            </a>. As a non-frontend developer, I wanted to try something other
             than Node because of all the horror stories I have read online. I
-            don't know if using Deno will rid me of some of that pain, but it
-            has been really easy to get going with I must say.
+            don't know if using Deno will alleviate some of that pain, but I
+            must say it has been really easy to get started with.
           </p>
         </div>
 
@@ -33,9 +33,8 @@ export default function TechUsed() {
           >
             Preact
           </a>{" "}
-          for its templating and rendering. This should probably make it easy
-          for React or other frontend developers to get into Deno Fresh I
-          reckon.
+          for its templating and rendering, which should make it easier for
+          React or other frontend developers to get into Deno Fresh, I believe.
         </div>
 
         <div class="text-2xl mt-5">
@@ -47,9 +46,9 @@ export default function TechUsed() {
           >
             TypeScript
           </a>{" "}
-          in this project since I have tried my hand with Go a bit in the past.
-          I still might not use it correctly in this project, but my plan is to
-          update this site as I learn and get better.
+          in this project since I have dabbled with Go a bit in the past. I may
+          still not be using it correctly in this project, but my plan is to
+          update this site as I learn and improve.
         </div>
 
         <div class="text-2xl mt-5">
@@ -70,9 +69,9 @@ export default function TechUsed() {
           >
             Deno Deploy
           </a>{" "}
-          to host this website. It integrates so easy with GitHub. It will
-          automatically deploy the changes that are pushed to the main branch.
-          It also creates helpful pull-request applications so that you can try
+          to host this website, and it integrates seamlessly with GitHub. It
+          automatically deploys changes that are pushed to the main branch and
+          also provides helpful pull-request applications so that you can try
           your changes before pushing them to the main branch.
         </div>
       </Page>

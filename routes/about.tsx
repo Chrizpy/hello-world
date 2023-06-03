@@ -10,21 +10,21 @@ export default function About() {
 
         <div class="text-2xl">
           <p>
-            Just as it is explained on the front page of this website. The
+            Just as it is explained on the front page of this website, the
             reason this website exists is because I wanted to try out frontend
-            development in my sparetime. Another reason this website exists is
-            for me to able to show people what I am up to!
+            development in my spare time. Another reason this website exists is
+            for me to be able to show people what I am up to!
           </p>
         </div>
 
         <div class="text-2xl mt-5">
           <p>
-            The idea is to create a landing page for my software development.
-            But could also include other things in the future. One such thing
-            that is currently in developing, is a blog section to this website.
-            Having a blog will make it even easier to share things I am up to.
-            It is also nice for myself to look back on to see what I have done
-            through the years. If I keep it up to date that is. ;)
+            The idea is to create a landing page for my software development,
+            but it could also include other things in the future. One such thing
+            that is currently in development is a blog section for this website.
+            Having a blog will make it even easier to share what I am up to. It
+            will also be nice for me to look back on and see what I have done
+            throughout the years, if I keep it up to date, that is. ;)
           </p>
         </div>
       </Page>

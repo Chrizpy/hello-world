@@ -35,9 +35,10 @@ export default function Home() {
 
         <div id="title" class="text-2xl">
           <p>
-            I'm a {calculateAge(new Date("1998-05-21"))}{" "}
-            year old Software Engineer from &#127480;&#127466;. I currently work
-            as a System Developer at Twingly.
+            I'm a{" "}
+            {calculateAge(new Date("1998-05-21"))}-year old Software Engineer
+            from Sweden (&#127480;&#127466;). Currently, I work as a System
+            Developer at Twingly.
             <a href="https://twingly.com" target="_blank">
               <img
                 src="./img/twingly-transparent.png"
@@ -47,10 +48,11 @@ export default function Home() {
             </a>
           </p>
           <p class="mt-2">
-            In my sparetime I like to tinker. I usually like to play with things
-            that I don't have the chance to incorporate at work. Examples of
-            this can be frontend development (why this website exists), embedded
-            development with microcontrollers or Raspberry Pi's.
+            In my spare time, I enjoy tinkering. I usually like to play with
+            things that I don't have the opportunity to work on professionally.
+            Examples of this include frontend development (which is why this
+            website exists), embedded development with microcontrollers, or
+            Raspberry Pi's.
           </p>
         </div>
       </Page>
