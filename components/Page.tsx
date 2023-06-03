@@ -1,6 +1,7 @@
 import Head from "./Head.tsx";
 import SocialNav from "./SocialNav.tsx";
 import Navigation from "./Navigation.tsx";
+import Footer from "./Footer.tsx";
 
 export default function Page(props: any) {
   return (
@@ -18,6 +19,7 @@ export default function Page(props: any) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
