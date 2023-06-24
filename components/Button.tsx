@@ -4,8 +4,7 @@ interface ButtonProps {
   class: string;
 }
 
-const buttonStyling =
-  "bg-banner rounded px-2 border-2 border-black";
+const buttonStyling = "bg-banner rounded px-2 border-2 border-black";
 
 export default function Button(props: ButtonProps) {
   return (
