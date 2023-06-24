@@ -5,7 +5,7 @@ interface ButtonProps {
 }
 
 const buttonStyling =
-  "bg-banner rounded px-2 border border-black border-2";
+  "bg-banner rounded px-2 border-2 border-black";
 
 export default function Button(props: ButtonProps) {
   return (
