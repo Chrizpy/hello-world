@@ -8,14 +8,11 @@ interface CollapseButtonProps {
 
 function manipulateTarget(target: string, state: boolean) {
   const targetElement = document.getElementById(target);
-  const targetElementClasses = targetElement?.classList;
 
-  if (state) {
-    targetElementClasses?.add("block");
-    targetElementClasses?.remove("hidden");
-  } else {
-    targetElementClasses?.add("hidden");
-    targetElementClasses?.remove("block");
+  if (targetElement) {
+    targetElement.style.maxHeight = state
+      ? targetElement.scrollHeight + "px"
+      : "0";
   }
 }
 
@@ -33,6 +30,7 @@ export default function CollapseButton(
     <div>
       <Button
         onClick={() => switchCollapseState()}
+        class="block tablet:hidden"
       >
         . . .
       </Button>
