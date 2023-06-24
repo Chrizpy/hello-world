@@ -37,7 +37,7 @@ export default function Home() {
           <p>
             I'm a{" "}
             {calculateAge(new Date("1998-05-21"))}-year old Software Engineer
-            from Sweden (&#127480;&#127466;). Currently, I work as a System
+            from Sweden (<span class="inline-block animate-shake">&#127480;&#127466;</span>). Currently, I work as a System
             Developer at Twingly.
             <a href="https://twingly.com" target="_blank">
               <img
