@@ -1,5 +1,3 @@
-import { tw } from "twind";
-
 import CollapseButton from "../islands/CollapseButton.tsx";
 
 interface Route {
@@ -42,7 +40,7 @@ function createLinks() {
   return initiateRoutes(routes).map((route) => (
     <li>
       <a
-        class={tw`${anchorStyling}`}
+        class={anchorStyling}
         href={route.path}
       >
         {route.value}

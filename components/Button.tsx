@@ -1,6 +1,3 @@
-import { HtmlAttributes } from "https://esm.sh/v92/csstype@3.1.0/index.d.ts";
-import { tw } from "twind";
-
 interface ButtonProps {
   onClick: any;
   children: string;
@@ -13,7 +10,7 @@ export default function Button(props: ButtonProps) {
   return (
     <button
       {...props}
-      class={tw`${buttonStyling}`}
+      class={buttonStyling}
     >
       {props.children}
     </button>

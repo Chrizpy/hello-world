@@ -1,5 +1,3 @@
-import { tw } from "twind";
-
 import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-github.tsx";
 import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-linkedin.tsx";
 
@@ -11,14 +9,14 @@ export default function SocialNav() {
       <a
         href="https://github.com/chrizpy"
         target="_blank"
-        class={tw`${iconStyling}`}
+        class={iconStyling}
       >
         <IconBrandGithub class="inline w-8 h-8" />
       </a>
       <a
         href="https://www.linkedin.com/in/christoffer-akouri/"
         target="_blank"
-        class={tw`${iconStyling}`}
+        class={iconStyling}
       >
         <IconBrandLinkedin class="inline w-8 h-8" />
       </a>
