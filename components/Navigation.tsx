@@ -54,7 +54,10 @@ export default function Navigation() {
     <div class="text-center text-2xl content-center">
       <CollapseButton target="navCollapse" />
 
-      <nav class="max-h-0 tablet:max-h-full w-1/2 mx-auto overflow-hidden transition-all" id="navCollapse">
+      <nav
+        class="max-h-0 tablet:max-h-full w-1/2 mx-auto overflow-hidden transition-all"
+        id="navCollapse"
+      >
         <ul>
           {createLinks()}
         </ul>
