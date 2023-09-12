@@ -1,10 +1,5 @@
 import CollapseButton from "../islands/CollapseButton.tsx";
 
-interface Route {
-  path: string;
-  value: string;
-}
-
 function formatRoute(route: string): string {
   if (route === "/") {
     return "Home";
@@ -17,36 +12,36 @@ function formatRoute(route: string): string {
   }
 }
 
-function initiateRoutes(routes: string[]): Route[] {
-  return routes.map((route) => ({
-    path: route,
-    value: formatRoute(route),
-  }));
+interface RouteInformation {
+  path: string;
+  enabled: boolean;
 }
 
 const anchorStyling =
   "block p-1 m-1 rounded-lg hover:bg-banner transition-all ease-in-out";
-const routes = [
-  "/",
-  "/about",
-  "/tech-used",
-  "/cv",
-  "/my-projects",
-  "/open-source",
-  "conferences",
+const routes: RouteInformation[] = [
+  { path: "/", enabled: true },
+  { path: "/about", enabled: true },
+  { path: "/tech-used", enabled: true },
+  { path: "/cv", enabled: true },
+  { path: "/my-projects", enabled: false },
+  { path: "/open-source", enabled: true },
+  { path: "conferences", enabled: false },
 ];
 
 function createLinks() {
-  return initiateRoutes(routes).map((route) => (
-    <li>
-      <a
-        class={anchorStyling}
-        href={route.path}
-      >
-        {route.value}
-      </a>
-    </li>
-  ));
+  return routes
+    .filter((route) => route.enabled)
+    .map((route) => (
+      <li key={route.path}>
+        <a
+          className={anchorStyling}
+          href={route.path}
+        >
+          {formatRoute(route.path)}
+        </a>
+      </li>
+    ));
 }
 
 export default function Navigation() {
