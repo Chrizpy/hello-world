@@ -7,7 +7,7 @@ export default function Page(props: any) {
   return (
     <div>
       <Head />
-      <div id="content" class="max-w-6xl mx-auto font-nanum">
+      <div id="content" class="max-w-6xl mx-auto">
         <SocialNav />
         <div class="grid grid-cols-4 m-5">
           <div class="col-span-4 tablet:col-span-1">
