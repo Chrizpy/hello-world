@@ -3,12 +3,13 @@ import SocialNav from "../components/SocialNav.tsx";
 import Navigation from "../components/Navigation.tsx";
 import Footer from "../components/Footer.tsx";
 import CvCard from "../components/CvCard.tsx";
+import Title from "../components/Title.tsx";
 
 export default function Cv() {
   return (
-    <div>
+    <>
       <Head />
-      <div id="content" class="max-w-6xl mx-auto font-nanum">
+      <div id="content" class="max-w-6xl mx-auto">
         <SocialNav />
         <div class="grid grid-cols-4 m-5">
           <div class="col-span-4 tablet:col-span-1">
@@ -17,18 +18,34 @@ export default function Cv() {
 
           <div class="mt-5 tablet:mt-0 col-span-4 tablet:col-span-3">
             <div>
-              <div class="text-5xl lg:text-6xl sm:text-left sm:mt-0">
-                <p>Work experience</p>
-              </div>
+              <Title headerStyle="h1">
+                Work experience
+              </Title>
 
               <CvCard
-                start="September 2020"
-                end="Present"
+                start="Sep 2023"
+                end="present"
+                image="./svg/axis.svg"
+                title="Axis Communications"
+                subTitle="Experienced Software Engineer"
+              >
+                At Axis I joined a team that works with{" "}
+                <a
+                  class="text-blue-600 visited:text-purple-600"
+                  href="https://www.axis.com/solutions/body-worn-solutions"
+                >
+                  body warn solutions
+                </a>.
+              </CvCard>
+
+              <CvCard
+                start="Sep 2020"
+                end="Sep 2023"
                 image="./img/twingly-transparent.png"
                 title="Twingly"
                 subTitle="System Developer"
               >
-                In my role at Twingly, I have the unique opportunity to
+                In my role at Twingly, I had the unique opportunity to
                 contribute to multiple areas due to our smaller team size. I
                 take on a range of responsibilities, including ensuring the
                 smooth operation of our systems, developing new features for
@@ -39,8 +56,8 @@ export default function Cv() {
               </CvCard>
 
               <CvCard
-                start="April 2019"
-                end="April 2019"
+                start="Apr 2019"
+                end="Apr 2019"
                 image="./img/linkopings-universitet.png"
                 title="Linköpings Universitet"
                 subTitle="Course Assistant"
@@ -56,13 +73,13 @@ export default function Cv() {
             </div>
 
             <div class="mt-5">
-              <div class="text-5xl lg:text-6xl sm:text-left sm:mt-0">
-                <p>Education</p>
-              </div>
+              <Title headerStyle="h1">
+                Education
+              </Title>
 
               <CvCard
-                start="September 2017"
-                end="June 2020"
+                start="Sep 2017"
+                end="Jun 2020"
                 image="./img/linkopings-universitet.png"
                 title="Linköpings Universitet"
                 subTitle="Bachelor in Computer Science and Engineering"
@@ -81,8 +98,8 @@ export default function Cv() {
               </CvCard>
 
               <CvCard
-                start="September 2019"
-                end="December 2019"
+                start="Sep 2019"
+                end="Dec 2019"
                 image="./img/university-of-limerick.png"
                 title="University of Limerick"
                 subTitle="Computer Engineering"
@@ -98,6 +115,6 @@ export default function Cv() {
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }

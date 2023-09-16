@@ -1,4 +1,5 @@
 import Page from "../components/Page.tsx";
+import Title from "../components/Title.tsx";
 
 function calculateAge(birthdate: Date) {
   const today = new Date();
@@ -17,46 +18,44 @@ function calculateAge(birthdate: Date) {
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Page>
-        <div class="text-5xl lg:text-6xl sm:text-left sm:mt-5">
-          <p>Welcome to my website!</p>
-        </div>
+        <Title headerStyle="h1">
+          Welcome to my website!
+        </Title>
 
-        <div id="title" class="text-2xl">
-          <p class="">
-            On this corner of the internet, you get to know me a little bit. :)
-          </p>
-        </div>
+        <p>
+          On this corner of the internet, you get to know me a little bit. :)
+        </p>
 
-        <div id="title" class="text-2xl font-black mt-5">
-          <p>So who am I?</p>
-        </div>
+        <Title headerStyle="h2" class="mt-5">
+          So who am I?
+        </Title>
 
-        <div id="title" class="text-2xl">
-          <p>
-            I'm a{" "}
-            {calculateAge(new Date("1998-05-21"))}-year old Software Engineer
-            from Sweden (<span class="inline-block animate-shake">
-              &#127480;&#127466;
-            </span>). Currently, I work as a System Developer at Twingly.
-            <a href="https://twingly.com" target="_blank">
-              <img
-                src="./img/twingly-transparent.png"
-                class="inline w-12 mx-2"
-              >
-              </img>
-            </a>
-          </p>
-          <p class="mt-2">
-            In my spare time, I enjoy tinkering. I usually like to play with
-            things that I don't have the opportunity to work on professionally.
-            Examples of this include frontend development (which is why this
-            website exists), embedded development with microcontrollers, or
-            Raspberry Pi's.
-          </p>
-        </div>
+        <p>
+          I'm a{" "}
+          {calculateAge(new Date("1998-05-21"))}-year old Software Engineer from
+          Sweden (<span class="inline-block animate-shake">
+            &#127480;&#127466;
+          </span>). My current role is as an Experienced Software Engineer at
+          Axis Communications.
+          <a href="https://axis.com" target="_blank">
+            <img
+              src="./svg/axis.svg"
+              class="inline w-16 mx-2"
+            >
+            </img>
+          </a>
+        </p>
+
+        <p class="mt-2">
+          In my spare time, I enjoy tinkering. I usually like to play with
+          things that I don't have the opportunity to work on professionally.
+          Examples of this include frontend development (which is why this
+          website exists), embedded development with microcontrollers, or
+          Raspberry Pi's.
+        </p>
       </Page>
-    </div>
+    </>
   );
 }

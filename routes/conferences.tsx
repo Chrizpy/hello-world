@@ -2,12 +2,10 @@ import Page from "../components/Page.tsx";
 
 export default function Conferences() {
   return (
-    <div>
+    <>
       <Page>
-        <div class="text-5xl lg:text-6xl sm:text-left sm:mt-0">
-          <p>Coming soon!</p>
-        </div>
+        <p>Coming soon!</p>
       </Page>
-    </div>
+    </>
   );
 }

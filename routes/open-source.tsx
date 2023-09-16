@@ -37,16 +37,18 @@ async function getPullrequsts(): Promise<GitHubData[]> {
 
 import Page from "../components/Page.tsx";
 import PullRequestItem from "../components/PullRequestItem.tsx";
+import Title from "../components/Title.tsx";
 
 export default function OpenSource(props: PageProps<GitHubData[]>) {
   const pullRequests = props.data;
 
   return (
-    <div>
+    <>
       <Page>
-        <div class="text-5xl lg:text-4xl sm:text-left sm:mt-5">
-          <p>Open source!</p>
-        </div>
+        <Title headerStyle="h1">
+          Open source!
+        </Title>
+
         <div class="mb-3 mt-3 pt-3 pb-3 rounded bg-banner">
           <p class="mx-3">
             <span>
@@ -62,6 +64,6 @@ export default function OpenSource(props: PageProps<GitHubData[]>) {
           <PullRequestItem GitHubData={githubData} />
         ))}
       </Page>
-    </div>
+    </>
   );
 }
