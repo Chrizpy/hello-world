@@ -18,7 +18,7 @@ interface RouteInformation {
 }
 
 const anchorStyling =
-  "block p-1 m-1 rounded-lg hover:bg-banner transition-all ease-in-out";
+  "block p-2 m-1 rounded-lg hover:bg-banner transition-all ease-in-out";
 const routes: RouteInformation[] = [
   { path: "/", enabled: true },
   { path: "/about", enabled: true },
@@ -46,11 +46,11 @@ function createLinks() {
 
 export default function Navigation() {
   return (
-    <div class="text-center text-2xl content-center">
+    <div class="text-center content-center">
       <CollapseButton target="navCollapse" />
 
       <nav
-        class="max-h-0 tablet:max-h-full w-1/2 mx-auto overflow-hidden transition-all"
+        class="max-h-0 tablet:max-h-full tablet:w-1/2 mx-auto overflow-hidden transition-all"
         id="navCollapse"
       >
         <ul>
