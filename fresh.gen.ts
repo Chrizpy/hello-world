@@ -2,33 +2,34 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $0 from "./routes/_app.tsx";
-import * as $1 from "./routes/_middleware.tsx";
-import * as $2 from "./routes/about.tsx";
-import * as $3 from "./routes/conferences.tsx";
-import * as $4 from "./routes/cv.tsx";
-import * as $5 from "./routes/index.tsx";
-import * as $6 from "./routes/my-projects.tsx";
-import * as $7 from "./routes/open-source.tsx";
-import * as $8 from "./routes/tech-used.tsx";
-import * as $$0 from "./islands/CollapseButton.tsx";
+import * as $_app from "./routes/_app.tsx";
+import * as $_middleware from "./routes/_middleware.tsx";
+import * as $about from "./routes/about.tsx";
+import * as $conferences from "./routes/conferences.tsx";
+import * as $cv from "./routes/cv.tsx";
+import * as $index from "./routes/index.tsx";
+import * as $my_projects from "./routes/my-projects.tsx";
+import * as $open_source from "./routes/open-source.tsx";
+import * as $tech_used from "./routes/tech-used.tsx";
+import * as $CollapseButton from "./islands/CollapseButton.tsx";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
-    "./routes/_app.tsx": $0,
-    "./routes/_middleware.tsx": $1,
-    "./routes/about.tsx": $2,
-    "./routes/conferences.tsx": $3,
-    "./routes/cv.tsx": $4,
-    "./routes/index.tsx": $5,
-    "./routes/my-projects.tsx": $6,
-    "./routes/open-source.tsx": $7,
-    "./routes/tech-used.tsx": $8,
+    "./routes/_app.tsx": $_app,
+    "./routes/_middleware.tsx": $_middleware,
+    "./routes/about.tsx": $about,
+    "./routes/conferences.tsx": $conferences,
+    "./routes/cv.tsx": $cv,
+    "./routes/index.tsx": $index,
+    "./routes/my-projects.tsx": $my_projects,
+    "./routes/open-source.tsx": $open_source,
+    "./routes/tech-used.tsx": $tech_used,
   },
   islands: {
-    "./islands/CollapseButton.tsx": $$0,
+    "./islands/CollapseButton.tsx": $CollapseButton,
   },
   baseUrl: import.meta.url,
-};
+} satisfies Manifest;
 
 export default manifest;
