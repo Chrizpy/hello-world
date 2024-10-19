@@ -12,7 +12,7 @@ import * as $my_projects from "./routes/my-projects.tsx";
 import * as $open_source from "./routes/open-source.tsx";
 import * as $tech_used from "./routes/tech-used.tsx";
 import * as $CollapseButton from "./islands/CollapseButton.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
