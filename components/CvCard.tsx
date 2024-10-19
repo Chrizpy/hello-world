@@ -12,31 +12,35 @@ interface CvProps {
 
 export default function CvCard(props: CvProps) {
   return (
-    <div class="mt-5 grid border-2 border-dashed border-gray-400 rounded-lg divide-y-2 divide-dashed divide-gray-400 transition ease-in-out hover:scale-95 tablet:grid-cols-4 tablet:divide-y-0 tablet:divide-x-2">
-      <div class="p-5 grid grid-cols-3 tablet:grid-cols-none">
-        <p class="text-sm col-span-2 tablet:col-span-1">
-          {props.start + " - " + props.end}
-        </p>
+    <div class="mt-5 transition ease-in-out laptop:hover:scale-95 border-2 border-dashed border-gray-400 rounded-lg divide-y-2 divide-dashed divide-gray-400">
+      <div class="grid grid-cols-3 p-5 ">
+        <div class="col-span-2">
+          <Title headerStyle="h2">
+            {props.title}
+          </Title>
+          <p>
+            {props.start + " - " + props.end}
+          </p>
+          <p>
+            {props.subTitle}
+          </p>
+        </div>
 
-        <img
-          src={props.image}
-          class="p-5"
-        >
-        </img>
+        <div class="col-span-1">
+          <img
+            src={props.image}
+            class="w-2/3 float-right"
+          >
+          </img>
+        </div>
       </div>
 
-      <div class="p-5 tablet:col-span-3">
-        <Title headerStyle="h2">
-          {props.title}
-        </Title>
-
-        <p>
-          {props.subTitle}
-        </p>
-
-        <p class="mt-5">
-          {props.children}
-        </p>
+      <div class="px-5 pb-5">
+        <div class="divide-2 divide-dashed divide-gray-400">
+          <p class="mt-5">
+            {props.children}
+          </p>
+        </div>
       </div>
     </div>
   );

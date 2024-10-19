@@ -1,12 +1,15 @@
 import { useState } from "preact/hooks";
+import { ComponentChildren } from "preact";
 
 import Button from "../components/Button.tsx";
 
+const target = "collapseChildren";
+
 interface CollapseButtonProps {
-  target: string;
+  children: ComponentChildren;
 }
 
-function manipulateTarget(target: string, state: boolean) {
+function manipulateTarget(state: boolean) {
   const targetElement = document.getElementById(target);
 
   if (targetElement) {
@@ -23,17 +26,32 @@ export default function CollapseButton(
   const switchCollapseState = () => {
     setState(!state);
 
-    manipulateTarget(props.target, state);
+    manipulateTarget(state);
   };
 
   return (
     <div>
-      <Button
-        onClick={() => switchCollapseState()}
-        class="block tablet:hidden"
-      >
-        . . .
-      </Button>
+      <div class="tablet:hidden">
+        <Button
+          onClick={() => {
+            switchCollapseState();
+          }}
+          class="block tablet:hidden"
+        >
+          . . .
+        </Button>
+        <div
+          onClick={() => {
+            switchCollapseState();
+          }}
+        >
+          {props.children}
+        </div>
+      </div>
+
+      <div>
+        {props.children}
+      </div>
     </div>
   );
 }

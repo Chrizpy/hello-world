@@ -2,6 +2,7 @@ import Head from "./Head.tsx";
 import SocialNav from "./SocialNav.tsx";
 import Navigation from "./Navigation.tsx";
 import Footer from "./Footer.tsx";
+import { Partial } from "$fresh/src/runtime/Partial.tsx";
 
 export default function Page(props: any) {
   return (
@@ -15,7 +16,9 @@ export default function Page(props: any) {
           </div>
 
           <div class="mt-5 tablet:mt-0 col-span-4 tablet:col-span-2">
-            {props.children}
+            <Partial name="content">
+              {props.children}
+            </Partial>
           </div>
         </div>
       </div>

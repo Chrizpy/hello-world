@@ -14,7 +14,7 @@ export default function PullRequestItem(props: { GitHubData: GitHubData }) {
   const pr: GitHubData = props.GitHubData;
 
   return (
-    <div class="bg-white border border-black rounded mb-5 p-3 transition ease-in-out hover:scale-105 font-sans">
+    <div class="bg-white border border-black rounded mb-5 p-3 transition ease-in-out laptop:hover:scale-105 font-sans">
       <a href={pr.pull_request.html_url} target="_blank">
         <div>
           <span>{pullRequestIcon(pr.state)}</span>{" "}

@@ -47,16 +47,16 @@ function createLinks() {
 export default function Navigation() {
   return (
     <div class="text-center content-center">
-      <CollapseButton target="navCollapse" />
-
-      <nav
-        class="max-h-0 tablet:max-h-full tablet:w-1/2 mx-auto overflow-hidden transition-all"
-        id="navCollapse"
-      >
-        <ul>
-          {createLinks()}
-        </ul>
-      </nav>
+      <CollapseButton>
+        <nav
+          class="max-h-0 tablet:max-h-full tablet:w-1/2 mx-auto overflow-hidden transition-all"
+          id="collapseChildren"
+        >
+          <ul>
+            {createLinks()}
+          </ul>
+        </nav>
+      </CollapseButton>
     </div>
   );
 }
