@@ -23,7 +23,7 @@ export default function Cv() {
               class="text-blue-600 visited:text-purple-600"
               href="https://www.axis.com/solutions/body-worn-solutions"
             >
-              body warn solutions
+              body worn solutions
             </a>.
           </CvCard>
 
