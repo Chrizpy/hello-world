@@ -1,17 +1,44 @@
 import IconInfoSquare from "@tabler/icons-preact/dist/esm/icons/IconInfoSquare.mjs";
 
-import { GitHubAPIQuery, GitHubData, PullRequest } from "../utils/GitHub.ts";
+import { GitHubData, GitHubUsername, PullRequest } from "../utils/GitHub.ts";
 import Page from "../components/Page.tsx";
 import PullRequestItem from "../components/PullRequestItem.tsx";
 import Title from "../components/Title.tsx";
 
-async function getPullrequsts(): Promise<GitHubData[]> {
-  const resp: Response = await fetch(
-    `https://api.github.com/search/issues?q=${GitHubAPIQuery}`,
-  );
-  const pull_request_items: { items: GitHubData[] } = await resp.json();
+interface GitHubSearchResponse {
+  items?: GitHubData[];
+  message?: string;
+}
 
-  return pull_request_items.items.map((item: GitHubData): GitHubData => {
+async function getPullRequests(): Promise<GitHubData[]> {
+  const url = new URL("https://api.github.com/search/issues");
+  url.search = new URLSearchParams({
+    q: `is:pr author:${GitHubUsername} archived:false is:public -user:${GitHubUsername}`,
+    per_page: "100",
+    page: "1",
+  }).toString();
+
+  const resp = await fetch(url, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      "User-Agent": "Chrizpy-hello-world",
+    },
+  });
+  const pullRequestItems = await resp.json() as GitHubSearchResponse;
+
+  if (!resp.ok) {
+    throw new Error(
+      `GitHub pull request search failed (${resp.status}): ${
+        pullRequestItems.message ?? resp.statusText
+      }`,
+    );
+  }
+
+  if (!Array.isArray(pullRequestItems.items)) {
+    throw new Error("GitHub pull request search returned an invalid response.");
+  }
+
+  return pullRequestItems.items.map((item): GitHubData => {
     const pr_data: PullRequest = {
       url: item.pull_request.url,
       html_url: item.pull_request.html_url,
@@ -29,7 +56,7 @@ async function getPullrequsts(): Promise<GitHubData[]> {
 }
 
 export default async function OpenSource() {
-  const pullRequests = await getPullrequsts();
+  const pullRequests = await getPullRequests();
 
   return (
     <>

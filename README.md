@@ -25,4 +25,7 @@ deno task dev
 
 This will watch the project directory and restart as necessary.
 
+The open source page shows pull requests for `Chrizpy` by default. Set
+`GITHUB_USERNAME` to use a different GitHub account.
+
 [![Made with Fresh](https://fresh.deno.dev/fresh-badge.svg)](https://fresh.deno.dev)
