@@ -1,4 +1,15 @@
-html, body {
-  background-image: url("../svg/small_dot.svg");
-  height: 100vh;
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #fff;
+  background-image: radial-gradient(
+    circle,
+    rgb(0 0 0 / 35%) 0.8px,
+    transparent 0.8px
+  );
+  background-size: 37.8px 37.8px;
 }
