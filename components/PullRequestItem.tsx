@@ -15,7 +15,11 @@ export default function PullRequestItem(props: { GitHubData: GitHubData }) {
 
   return (
     <div class="bg-white border border-black rounded mb-5 p-3 transition ease-in-out laptop:hover:scale-105 font-sans">
-      <a href={pr.pull_request.html_url} target="_blank">
+      <a
+        href={pr.pull_request.html_url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <div>
           <span>{pullRequestIcon(pr.state)}</span>{" "}
           <span class="text-gray-500">

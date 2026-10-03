@@ -1,11 +1,11 @@
-import { ComponentChildren } from "preact";
+import type { ComponentChildren, JSX } from "preact";
 
 type HeaderStyle = "h1" | "h2" | "h3" | "h4";
 
 interface TitleProps {
   headerStyle: HeaderStyle;
   class?: string;
-  children: string;
+  children: ComponentChildren;
 }
 
 const stylingBase = "font-nanum text-gray-800";
@@ -30,14 +30,14 @@ const addExternalStyling = (styling: string | undefined) => {
 };
 
 export default function Title(props: TitleProps) {
+  const Tag = props.headerStyle as keyof JSX.IntrinsicElements;
+
   return (
-    <>
-      <p
-        className={stylingBase + " " + textSizeStyling(props.headerStyle) +
-          " " + addExternalStyling(props.class)}
-      >
-        {props.children}
-      </p>
-    </>
+    <Tag
+      className={stylingBase + " " + textSizeStyling(props.headerStyle) +
+        " " + addExternalStyling(props.class)}
+    >
+      {props.children}
+    </Tag>
   );
 }

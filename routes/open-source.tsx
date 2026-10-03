@@ -10,7 +10,12 @@ interface GitHubSearchResponse {
   message?: string;
 }
 
-async function getPullRequests(): Promise<GitHubData[]> {
+interface PullRequestSearchResult {
+  items: GitHubData[];
+  errorMessage?: string;
+}
+
+async function getPullRequests(): Promise<PullRequestSearchResult> {
   const url = new URL("https://api.github.com/search/issues");
   url.search = new URLSearchParams({
     q: `is:pr author:${GitHubUsername} archived:false is:public -user:${GitHubUsername}`,
@@ -18,45 +23,76 @@ async function getPullRequests(): Promise<GitHubData[]> {
     page: "1",
   }).toString();
 
-  const resp = await fetch(url, {
-    headers: {
-      Accept: "application/vnd.github+json",
-      "User-Agent": "Chrizpy-hello-world",
-    },
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+
+  let resp: Response;
+  try {
+    resp = await fetch(url, {
+      headers: {
+        Accept: "application/vnd.github+json",
+        "User-Agent": "Chrizpy-hello-world",
+      },
+      signal: controller.signal,
+    });
+  } catch (error) {
+    if (error instanceof DOMException && error.name === "AbortError") {
+      return {
+        items: [],
+        errorMessage:
+          "GitHub request timed out. Please refresh the page and try again.",
+      };
+    }
+
+    return {
+      items: [],
+      errorMessage:
+        "GitHub is temporarily unavailable. Please try again in a moment.",
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
+
   const pullRequestItems = await resp.json() as GitHubSearchResponse;
 
   if (!resp.ok) {
-    throw new Error(
-      `GitHub pull request search failed (${resp.status}): ${
+    return {
+      items: [],
+      errorMessage: `GitHub pull request search failed (${resp.status}): ${
         pullRequestItems.message ?? resp.statusText
       }`,
-    );
+    };
   }
 
   if (!Array.isArray(pullRequestItems.items)) {
-    throw new Error("GitHub pull request search returned an invalid response.");
+    return {
+      items: [],
+      errorMessage:
+        "GitHub pull request search returned an unexpected response shape.",
+    };
   }
 
-  return pullRequestItems.items.map((item): GitHubData => {
-    const pr_data: PullRequest = {
-      url: item.pull_request.url,
-      html_url: item.pull_request.html_url,
-      merged_at: item.pull_request.merged_at,
-    };
+  return {
+    items: pullRequestItems.items.map((item): GitHubData => {
+      const pr_data: PullRequest = {
+        url: item.pull_request.url,
+        html_url: item.pull_request.html_url,
+        merged_at: item.pull_request.merged_at,
+      };
 
-    return {
-      url: item.url,
-      repository_url: item.repository_url,
-      title: item.title,
-      state: item.state,
-      pull_request: pr_data,
-    };
-  });
+      return {
+        url: item.url,
+        repository_url: item.repository_url,
+        title: item.title,
+        state: item.state,
+        pull_request: pr_data,
+      };
+    }),
+  };
 }
 
 export default async function OpenSource() {
-  const pullRequests = await getPullRequests();
+  const { items: pullRequests, errorMessage } = await getPullRequests();
 
   return (
     <>
@@ -76,6 +112,17 @@ export default async function OpenSource() {
             </span>
           </p>
         </div>
+
+        {errorMessage && (
+          <p class="mb-5 rounded border border-yellow-700 bg-yellow-100 p-3 text-yellow-900">
+            {errorMessage}
+          </p>
+        )}
+
+        {!errorMessage && pullRequests.length === 0 && (
+          <p class="mb-5">No public pull requests found right now.</p>
+        )}
+
         {pullRequests.map((githubData: GitHubData) => (
           <PullRequestItem GitHubData={githubData} />
         ))}

@@ -39,12 +39,12 @@ export default function Home() {
             &#127480;&#127466;
           </span>). My current role is as an Experienced Software Engineer at
           Axis Communications.
-          <a href="https://axis.com" target="_blank">
-            <img
-              src="./svg/axis.svg"
-              class="inline w-16 mx-2"
-            >
-            </img>
+          <a
+            href="https://axis.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./svg/axis.svg" class="inline w-16 mx-2" />
           </a>
         </p>
 

@@ -1,4 +1,4 @@
-import Head from "./Head.tsx";
+import Banner from "./Banner.tsx";
 import SocialNav from "./SocialNav.tsx";
 import Navigation from "./Navigation.tsx";
 import Footer from "./Footer.tsx";
@@ -12,7 +12,7 @@ interface PageProps {
 export default function Page(props: PageProps) {
   return (
     <div>
-      <Head />
+      <Banner />
       <div id="content" class="max-w-6xl mx-auto">
         <SocialNav />
         <div class="grid grid-cols-4 m-5">

@@ -9,6 +9,7 @@ export default function SocialNav() {
       <a
         href="https://github.com/chrizpy"
         target="_blank"
+        rel="noopener noreferrer"
         class={iconStyling}
       >
         <IconBrandGithub class="inline w-8 h-8" />
@@ -16,6 +17,7 @@ export default function SocialNav() {
       <a
         href="https://www.linkedin.com/in/christoffer-akouri/"
         target="_blank"
+        rel="noopener noreferrer"
         class={iconStyling}
       >
         <IconBrandLinkedin class="inline w-8 h-8" />

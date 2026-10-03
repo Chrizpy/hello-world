@@ -4,7 +4,7 @@ function formatRoute(route: string): string {
   if (route === "/") {
     return "Home";
   } else {
-    route = route.replace("-", " ")
+    route = route.replaceAll("-", " ")
       .replace("/", "")
       .toLowerCase();
 
@@ -13,7 +13,7 @@ function formatRoute(route: string): string {
 }
 
 interface RouteInformation {
-  path: string;
+  path: `/${string}`;
   enabled: boolean;
 }
 
@@ -26,7 +26,7 @@ const routes: RouteInformation[] = [
   { path: "/cv", enabled: true },
   { path: "/my-projects", enabled: false },
   { path: "/open-source", enabled: true },
-  { path: "conferences", enabled: false },
+  { path: "/conferences", enabled: false },
 ];
 
 function createLinks() {
@@ -49,8 +49,8 @@ export default function Navigation() {
     <div class="text-center content-center">
       <CollapseButton>
         <nav
-          class="max-h-0 tablet:max-h-full tablet:w-1/2 mx-auto overflow-hidden transition-all"
-          id="collapseChildren"
+          class="tablet:w-1/2 mx-auto"
+          aria-label="Main navigation"
         >
           <ul>
             {createLinks()}

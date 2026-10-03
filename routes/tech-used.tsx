@@ -14,6 +14,7 @@ export default function TechUsed() {
           <a
             href="https://fresh.deno.dev/"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-green-400"
           >
             Deno Fresh
@@ -28,6 +29,7 @@ export default function TechUsed() {
           <a
             href="https://preactjs.com/"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-purple-400"
           >
             Preact
@@ -41,6 +43,7 @@ export default function TechUsed() {
           <a
             href="https://www.typescriptlang.org/"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-blue-400"
           >
             TypeScript
@@ -53,7 +56,12 @@ export default function TechUsed() {
         <p class="mt-5">
           To create the simple design for the top banner on this page, I used
           the app{" "}
-          <a href="http://inkpad.art/" target="_blank" class="text-yellow-400">
+          <a
+            href="http://inkpad.art/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-yellow-400"
+          >
             InkPad
           </a>{" "}
           on my iPad.
@@ -64,6 +72,7 @@ export default function TechUsed() {
           <a
             href="https://deno.com/deploy"
             target="_blank"
+            rel="noopener noreferrer"
             class="text-purple-400"
           >
             Deno Deploy
