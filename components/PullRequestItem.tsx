@@ -1,5 +1,5 @@
-import IconGitPullRequest from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-pull-request.tsx";
-import IconGitMerge from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/git-merge.tsx";
+import IconGitMerge from "@tabler/icons-preact/dist/esm/icons/IconGitMerge.mjs";
+import IconGitPullRequest from "@tabler/icons-preact/dist/esm/icons/IconGitPullRequest.mjs";
 
 import { GitHubData } from "../utils/GitHub.ts";
 

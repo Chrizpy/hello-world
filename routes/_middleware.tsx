@@ -1,4 +1,4 @@
-import { MiddlewareHandlerContext } from "$fresh/server.ts";
+import type { Context } from "fresh";
 import type { Event } from "$ga4";
 import { GA4Report, isDocument, isServerError } from "$ga4";
 
@@ -6,7 +6,7 @@ const GA4_MEASUREMENT_ID = Deno.env.get("GA4_MEASUREMENT_ID");
 
 function ga4(
   request: Request,
-  conn: MiddlewareHandlerContext,
+  conn: Deno.ServeHandlerInfo,
   response: Response,
   _start: number,
   error?: unknown,
@@ -50,7 +50,14 @@ function ga4(
 
     // Create basic report.
     const measurementId = GA4_MEASUREMENT_ID;
-    const report = new GA4Report({ measurementId, request, response, conn });
+    const report = new GA4Report({
+      measurementId,
+      request,
+      response,
+      // GA4 only consumes remoteAddr. Its legacy ConnInfo type also requires
+      // localAddr, which Deno.serve no longer exposes.
+      conn: { localAddr: conn.remoteAddr, remoteAddr: conn.remoteAddr },
+    });
 
     // Override the default (page_view) event.
     report.event = event;
@@ -67,8 +74,7 @@ function ga4(
 }
 
 export async function handler(
-  req: Request,
-  ctx: MiddlewareHandlerContext,
+  ctx: Context<unknown>,
 ): Promise<Response> {
   let err;
   let res: Response;
@@ -95,8 +101,8 @@ export async function handler(
     throw e;
   } finally {
     ga4(
-      req,
-      ctx,
+      ctx.req,
+      ctx.info,
       res!,
       start,
       err,

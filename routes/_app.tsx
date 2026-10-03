@@ -1,7 +1,6 @@
-import { AppProps } from "$fresh/server.ts";
-import { Partial } from "$fresh/src/runtime/Partial.tsx";
+import type { PageProps } from "fresh";
 
-export default function App({ Component }: AppProps) {
+export default function App({ Component }: PageProps) {
   return (
     <html>
       <head>

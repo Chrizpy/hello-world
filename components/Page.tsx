@@ -2,9 +2,14 @@ import Head from "./Head.tsx";
 import SocialNav from "./SocialNav.tsx";
 import Navigation from "./Navigation.tsx";
 import Footer from "./Footer.tsx";
-import { Partial } from "$fresh/src/runtime/Partial.tsx";
+import { Partial } from "fresh/runtime";
+import type { ComponentChildren } from "preact";
 
-export default function Page(props: any) {
+interface PageProps {
+  children: ComponentChildren;
+}
+
+export default function Page(props: PageProps) {
   return (
     <div>
       <Head />

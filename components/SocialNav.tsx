@@ -1,5 +1,5 @@
-import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-github.tsx";
-import IconBrandLinkedin from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/brand-linkedin.tsx";
+import IconBrandGithub from "@tabler/icons-preact/dist/esm/icons/IconBrandGithub.mjs";
+import IconBrandLinkedin from "@tabler/icons-preact/dist/esm/icons/IconBrandLinkedin.mjs";
 
 const iconStyling = "hover:bg-banner rounded-lg p-2 transition-all ease-in-out";
 

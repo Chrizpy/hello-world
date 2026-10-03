@@ -1,16 +1,9 @@
-import IconInfoSquare from "https://deno.land/x/tabler_icons_tsx@0.0.2/tsx/info-square.tsx";
-
-import { PageProps } from "$fresh/server.ts";
-import { Handlers } from "$fresh/server.ts";
+import IconInfoSquare from "@tabler/icons-preact/dist/esm/icons/IconInfoSquare.mjs";
 
 import { GitHubAPIQuery, GitHubData, PullRequest } from "../utils/GitHub.ts";
-
-export const handler: Handlers<GitHubData[]> = {
-  async GET(_req, ctx) {
-    const pullRequests = await getPullrequsts();
-    return ctx.render(pullRequests);
-  },
-};
+import Page from "../components/Page.tsx";
+import PullRequestItem from "../components/PullRequestItem.tsx";
+import Title from "../components/Title.tsx";
 
 async function getPullrequsts(): Promise<GitHubData[]> {
   const resp: Response = await fetch(
@@ -35,12 +28,8 @@ async function getPullrequsts(): Promise<GitHubData[]> {
   });
 }
 
-import Page from "../components/Page.tsx";
-import PullRequestItem from "../components/PullRequestItem.tsx";
-import Title from "../components/Title.tsx";
-
-export default function OpenSource(props: PageProps<GitHubData[]>) {
-  const pullRequests = props.data;
+export default async function OpenSource() {
+  const pullRequests = await getPullrequsts();
 
   return (
     <>
