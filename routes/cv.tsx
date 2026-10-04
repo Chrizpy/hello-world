@@ -53,6 +53,39 @@ export default function Cv() {
               </a>.
             </p>
           </article>
+
+          <ol
+            class="cv-subtimeline"
+            aria-label="Highlights at Axis Communications"
+          >
+            <li class="cv-sub-event cv-sub-event--axchange">
+              <span class="cv-sub-event__marker" aria-hidden="true" />
+              <div class="cv-sub-event__date">
+                <time datetime="2026-06">Jun 2026</time>
+                <span aria-hidden="true">—</span>
+                <time datetime="2026-08">Aug 2026</time>
+              </div>
+              <article class="cv-sub-event__paper cv-note cv-note--nested">
+                <span class="cv-note__pin" aria-hidden="true" />
+                <header class="cv-sub-event__header">
+                  <div>
+                    <span class="cv-event__category">Company exchange</span>
+                    <h3 class="cv-sub-event__title">Axchange in Canada</h3>
+                    <p class="cv-sub-event__description">
+                      I got the opportunity to go on a six-week exchange with
+                      Axis Communications in Canada.
+                    </p>
+                  </div>
+                  <img
+                    src="./svg/canada-flag.svg"
+                    alt=""
+                    class="cv-sub-event__logo"
+                    loading="lazy"
+                  />
+                </header>
+              </article>
+            </li>
+          </ol>
         </li>
 
         <li class="cv-event cv-event--twingly">

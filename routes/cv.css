@@ -386,6 +386,11 @@
   --note-pin-color: #84cc16;
 }
 
+.cv-sub-event--axchange {
+  --note-color: #ffd6bd;
+  --note-pin-color: #2dd4bf;
+}
+
 .cv-note--nested {
   padding-left: 1rem;
 }
